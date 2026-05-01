@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.disabled = true;
 
         // 3. Show "AI is typing..."
-        const loadingId = addMessage('ai', 'AI is typing...', true);
+        const loadingId = addMessage('ai', 'AI is thinking...', true);
 
         try {
             // 4. Send request to backend
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Error Handling: If backend fails
             console.error('Chat error:', error);
             removeMessage(loadingId);
-            addMessage('ai', '⚠️ Error connecting to server. Please try again later.');
+            addMessage('ai', '⚠️ AI is currently busy. Please try again in a few seconds.');
         } finally {
             // Re-enable inputs
             sendBtn.disabled = false;
