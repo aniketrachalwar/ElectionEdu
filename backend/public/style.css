@@ -1,0 +1,195 @@
+/* Global Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f3f4f6; /* Soft light background */
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Layout: Card-style container */
+.app-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Top Section */
+.chat-header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.chat-header h1 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.chat-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Chat Box */
+.chat-box {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Spacing between messages */
+    background-color: #ffffff;
+}
+
+/* Scrollbar Styling */
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 999px;
+}
+
+/* Messages */
+.message {
+    max-width: 80%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* User Messages -> Right Side */
+.message.user {
+    align-self: flex-end;
+    background-color: #3b82f6; /* Blue bubble */
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+/* AI Messages -> Left Side */
+.message.ai {
+    align-self: flex-start;
+    background-color: #f3f4f6; /* Gray bubble */
+    color: #1f2937;
+    border-bottom-left-radius: 4px;
+}
+
+/* Loading Animation */
+.message.loading {
+    color: #6b7280;
+    font-style: italic;
+    background-color: transparent;
+    padding: 0.5rem 0;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    gap: 0.5rem;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 999px; /* Rounded corners */
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-section input:focus {
+    border-color: #3b82f6;
+}
+
+.input-section button {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 999px; /* Rounded corners */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.input-section button:hover {
+    background-color: #2563eb;
+}
+
+.input-section button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+    .app-container {
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+/* --- Quiz Styles --- */
+.quiz-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.quiz-btn {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-btn:hover:not(:disabled) {
+    background-color: #e0f2fe;
+    border-color: #7dd3fc;
+    color: #0284c7;
+}
+
+.quiz-feedback {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
